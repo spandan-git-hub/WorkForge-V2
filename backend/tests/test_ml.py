@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.security import create_access_token
 from app.ml.data_loader import get_available_roles, load_role_requirements
 from app.ml.gap_analyzer import GapAnalyzer, gap_analyzer
+from app.ml.recommender import SkillRecommender, recommender
 from app.models.ml_analysis import MLAnalysis
 from app.models.user import User
 
@@ -169,3 +170,106 @@ async def test_run_gap_analysis_endpoint(client: AsyncClient):
     severity_order = {"High": 0, "Medium": 1, "Low": 2}
     severities = [severity_order[g["severity"]] for g in gaps]
     assert severities == sorted(severities)
+
+
+@pytest.mark.asyncio
+async def test_skill_recommender_unit():
+    """Test SkillRecommender scoring algorithm, prioritization, and reasoning."""
+    rec = SkillRecommender()
+
+    # Empty gaps test
+    empty_res = rec.recommend(user_skills={}, gaps=[])
+    assert empty_res == []
+
+    # Mock gaps
+    gaps = [
+        {"skill": "Docker", "current": 0, "required": 4, "gap_magnitude": 4, "severity": "High"},
+        {"skill": "TypeScript", "current": 1, "required": 3, "gap_magnitude": 2, "severity": "Medium"},
+        {"skill": "Git", "current": 2, "required": 3, "gap_magnitude": 1, "severity": "Low"},
+    ]
+    user_skills = {"JavaScript": 4, "React": 3}
+
+    results = rec.recommend(user_skills=user_skills, gaps=gaps, top_n=2)
+    assert len(results) == 2
+
+    # Check structure
+    for item in results:
+        assert "skill" in item
+        assert "priority" in item
+        assert "score" in item
+        assert "reason" in item
+        assert item["score"] > 0
+        assert len(item["reason"]) > 10
+
+    # Priorities must be 1, 2
+    assert results[0]["priority"] == 1
+    assert results[1]["priority"] == 2
+    assert results[0]["score"] >= results[1]["score"]
+
+
+@pytest.mark.asyncio
+async def test_recommendations_endpoint_unauthorized(client: AsyncClient):
+    """GET /api/v1/ml/recommendations requires authentication."""
+    res = await client.get("/api/v1/ml/recommendations")
+    assert res.status_code == 401
+
+
+@pytest.mark.asyncio
+async def test_recommendations_endpoint_no_prior_analysis(client: AsyncClient):
+    """GET /api/v1/ml/recommendations returns 400 when no gap analysis has been run."""
+    email = f"norec_{uuid.uuid4().hex[:8]}@example.com"
+    reg_res = await client.post(
+        "/api/v1/auth/register",
+        json={"name": "No Rec User", "email": email, "password": "password123"},
+    )
+    assert reg_res.status_code == 201
+    token = reg_res.json()["token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    res = await client.get("/api/v1/ml/recommendations", headers=headers)
+    assert res.status_code == 400
+    assert "run gap analysis first" in res.json()["detail"].lower()
+
+
+@pytest.mark.asyncio
+async def test_recommendations_endpoint_success(client: AsyncClient):
+    """Test successful recommendation generation after gap analysis."""
+    email = f"recuser_{uuid.uuid4().hex[:8]}@example.com"
+    reg_res = await client.post(
+        "/api/v1/auth/register",
+        json={"name": "Rec User", "email": email, "password": "password123"},
+    )
+    assert reg_res.status_code == 201
+    token = reg_res.json()["token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    # Add a user skill
+    await client.post(
+        "/api/v1/skills",
+        json={"name": "Python", "proficiency": 3},
+        headers=headers,
+    )
+
+    # Run gap analysis against Backend Developer
+    gap_res = await client.post(
+        "/api/v1/ml/gap-analysis",
+        json={"target_role": "Backend Developer"},
+        headers=headers,
+    )
+    assert gap_res.status_code == 200
+
+    # Get recommendations
+    rec_res = await client.get("/api/v1/ml/recommendations", headers=headers)
+    assert rec_res.status_code == 200
+    data = rec_res.json()
+    assert "recommendations" in data
+    recs = data["recommendations"]
+    assert len(recs) > 0
+
+    # Verify priority sequential indexing
+    for i, item in enumerate(recs):
+        assert item["priority"] == i + 1
+        assert item["skill"]
+        assert item["reason"]
+        assert "target:" in item["reason"].lower() or "level" in item["reason"].lower()
+

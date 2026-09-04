@@ -18,7 +18,7 @@ This is the master implementation guide. Follow each phase in order. Each phase 
 | Phase 5 | Skill inventory (CRUD + catalog) | ✅ Completed |
 | Phase 6 | Events (browse, filter, interest tracking) | ✅ Completed |
 | Phase 7 | ML — Gap Analysis | ✅ Completed |
-| Phase 8 | ML — Skill Recommender | |
+| Phase 8 | ML — Skill Recommender | ✅ Completed |
 | Phase 9 | ML — Resource Suggester | |
 | Phase 10 | Dashboard (summary view) | |
 | Phase 11 | Polish, error handling, loading states | |

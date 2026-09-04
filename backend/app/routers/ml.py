@@ -4,7 +4,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.dependencies import get_current_user
 from app.db.session import get_db
 from app.models.user import User
-from app.schemas.ml import GapAnalysisRequest, GapAnalysisResponse
+from app.schemas.ml import (
+    GapAnalysisRequest,
+    GapAnalysisResponse,
+    RecommendationsResponse,
+)
 from app.services import ml_service
 
 router = APIRouter(prefix="/ml", tags=["ML"])
@@ -43,3 +47,25 @@ async def analyze_gaps(
         user_id=current_user.id,
         target_role=data.target_role,
     )
+
+
+@router.get(
+    "/recommendations",
+    response_model=RecommendationsResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Get prioritized skill recommendations based on latest gap analysis",
+)
+async def get_recommendations(
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> RecommendationsResponse:
+    """
+    Generate prioritized skill recommendations based on the user's latest gap analysis.
+    Ranks gaps using a weighted composite of gap urgency, market transferability,
+    and synergy with already acquired skills.
+    """
+    return await ml_service.get_recommendations(
+        db=db,
+        user_id=current_user.id,
+    )
+
