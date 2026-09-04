@@ -12,7 +12,7 @@ This is the master implementation guide. Follow each phase in order. Each phase 
 | Phase | What Gets Built | Status |
 |-------|----------------|--------|
 | Phase 1 | Project scaffolding & repo setup | ✅ Completed |
-| Phase 2 | Database schema + migrations | |
+| Phase 2 | Database schema + migrations | ✅ Completed |
 | Phase 3 | Authentication (register, login, JWT) | |
 | Phase 4 | User profile (read + update) | |
 | Phase 5 | Skill inventory (CRUD + catalog) | |

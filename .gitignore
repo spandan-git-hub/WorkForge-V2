@@ -1,16 +1,69 @@
+# Environment Variables & Secrets
+*.env
+*.env.*
+!.env.example
+
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
-*.env
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ML Models & Serialized Checkpoints
 *.joblib
 *.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
+*.h5
 
-# Node
+# Node & Frontend
 node_modules/
 dist/
-.env
+dist-ssr/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# OS
+# Database & Storage
+*.sqlite
+*.sqlite3
+*.db
+
+# Logs & Temporary Files
+*.log
+logs/
+tmp/
+temp/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System
 .DS_Store
 Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Documentation / Internal Reports
+REPORTBYSONNET.md

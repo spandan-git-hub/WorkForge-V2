@@ -1,0 +1,157 @@
+{
+  "Frontend Developer": {
+    "JavaScript": 5,
+    "HTML5": 5,
+    "CSS3": 4,
+    "React": 4,
+    "TypeScript": 3,
+    "TailwindCSS": 3,
+    "Git": 3,
+    "REST APIs": 3,
+    "Next.js": 3
+  },
+  "Backend Developer": {
+    "Python": 4,
+    "FastAPI": 4,
+    "SQL": 4,
+    "PostgreSQL": 4,
+    "REST APIs": 4,
+    "Docker": 3,
+    "Git": 3,
+    "Redis": 3,
+    "System Design": 3
+  },
+  "Full Stack Developer": {
+    "JavaScript": 4,
+    "TypeScript": 3,
+    "React": 4,
+    "Node.js": 4,
+    "Express.js": 3,
+    "HTML5": 4,
+    "CSS3": 3,
+    "SQL": 3,
+    "PostgreSQL": 3,
+    "Git": 3,
+    "REST APIs": 4,
+    "Docker": 2
+  },
+  "Data Scientist": {
+    "Python": 5,
+    "Pandas": 4,
+    "NumPy": 4,
+    "SQL": 4,
+    "Machine Learning": 4,
+    "scikit-learn": 4,
+    "Deep Learning": 3,
+    "Git": 3
+  },
+  "ML Engineer": {
+    "Python": 5,
+    "Machine Learning": 5,
+    "Deep Learning": 4,
+    "PyTorch": 4,
+    "scikit-learn": 4,
+    "Docker": 3,
+    "Git": 3,
+    "SQL": 3,
+    "LLMs": 3
+  },
+  "DevOps Engineer": {
+    "Docker": 4,
+    "Kubernetes": 4,
+    "Linux": 4,
+    "CI/CD": 4,
+    "GitHub Actions": 4,
+    "Terraform": 3,
+    "AWS": 3,
+    "Bash / Shell": 4,
+    "Git": 4,
+    "Prometheus": 3
+  },
+  "Cloud Architect": {
+    "AWS": 5,
+    "Google Cloud Platform": 4,
+    "Terraform": 4,
+    "Kubernetes": 4,
+    "Docker": 4,
+    "System Design": 5,
+    "Microservices": 4,
+    "Linux": 3,
+    "Git": 3
+  },
+  "Mobile Developer": {
+    "React Native": 4,
+    "JavaScript": 4,
+    "TypeScript": 3,
+    "iOS Development": 3,
+    "Android Development": 3,
+    "REST APIs": 3,
+    "Git": 3
+  },
+  "QA Engineer": {
+    "Python": 3,
+    "JavaScript": 3,
+    "Pytest": 4,
+    "Cypress": 4,
+    "Selenium": 3,
+    "Playwright": 3,
+    "REST APIs": 3,
+    "Git": 3,
+    "CI/CD": 2
+  },
+  "Data Analyst": {
+    "SQL": 5,
+    "Python": 3,
+    "Pandas": 4,
+    "NumPy": 3,
+    "R": 3,
+    "Git": 2
+  },
+  "Cybersecurity Engineer": {
+    "Linux": 4,
+    "Bash / Shell": 4,
+    "Python": 3,
+    "AWS": 3,
+    "Docker": 3,
+    "Git": 3
+  },
+  "Product Manager (tech)": {
+    "Agile / Scrum": 5,
+    "System Design": 3,
+    "SQL": 3,
+    "REST APIs": 3,
+    "Git": 2,
+    "Figma": 3
+  },
+  "UI/UX Designer (tech tools)": {
+    "Figma": 5,
+    "UI/UX Design": 5,
+    "HTML5": 3,
+    "CSS3": 3,
+    "TailwindCSS": 2,
+    "Git": 2
+  },
+  "Site Reliability Engineer": {
+    "Linux": 5,
+    "Kubernetes": 4,
+    "Docker": 4,
+    "Prometheus": 4,
+    "Grafana": 4,
+    "Python": 3,
+    "Go": 3,
+    "Bash / Shell": 4,
+    "Terraform": 3,
+    "Git": 3
+  },
+  "Data Engineer": {
+    "Python": 4,
+    "SQL": 5,
+    "PostgreSQL": 4,
+    "Docker": 3,
+    "Pandas": 4,
+    "Kafka": 3,
+    "AWS": 3,
+    "Linux": 3,
+    "Git": 3
+  }
+}

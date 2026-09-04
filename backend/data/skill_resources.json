@@ -1,0 +1,536 @@
+{
+  "Python": [
+    {
+      "title": "Python for Everybody Specialization",
+      "type": "course",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/python",
+      "duration": "30 hours",
+      "description": "Learn to Program and Analyze Data with Python. Covers basic programming to data structures, networked application program interfaces, and databases."
+    },
+    {
+      "title": "Official Python 3 Documentation & Tutorial",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://docs.python.org/3/tutorial/",
+      "duration": "Self-paced",
+      "description": "Official guide introducing readers informally to the basic concepts and features of the Python language and system."
+    },
+    {
+      "title": "Python Full Course for Beginners",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+      "duration": "4.5 hours",
+      "description": "Comprehensive hands-on crash course covering Python syntax, loops, functions, and object-oriented programming."
+    },
+    {
+      "title": "Fluent Python: Clear, Concise, and Effective Programming",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/",
+      "duration": "35 hours",
+      "description": "Deep dive into idiomatic Python features, generators, coroutines, type hints, and metaprogramming."
+    }
+  ],
+  "JavaScript": [
+    {
+      "title": "MDN Web Docs \u2014 JavaScript Guide",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+      "duration": "Self-paced",
+      "description": "The most trusted reference for JavaScript syntax, data types, closures, async programming, and modern ES features."
+    },
+    {
+      "title": "The Complete JavaScript Course: From Zero to Expert!",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/the-complete-javascript-course/",
+      "duration": "68 hours",
+      "description": "Master modern JavaScript from beginner to advanced. Projects, theory, DOM manipulation, OOP, and asynchronous JS."
+    },
+    {
+      "title": "JavaScript: Understanding the Weird Parts",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=Bv_5Zv5c-6g",
+      "duration": "3.5 hours",
+      "description": "Deep exploration of execution contexts, closures, prototypal inheritance, and how JavaScript works under the hood."
+    },
+    {
+      "title": "Eloquent JavaScript (4th Edition)",
+      "type": "book",
+      "platform": "Eloquent JavaScript",
+      "url": "https://eloquentjavascript.net/",
+      "duration": "25 hours",
+      "description": "A modern introduction to programming, JavaScript, and digital craft."
+    }
+  ],
+  "TypeScript": [
+    {
+      "title": "Official TypeScript Handbook",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "duration": "Self-paced",
+      "description": "The definitive guide to TypeScript types, interfaces, generics, utility types, and compiler configuration."
+    },
+    {
+      "title": "Understanding TypeScript - 2026 Edition",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/understanding-typescript/",
+      "duration": "15 hours",
+      "description": "Build modern web apps with TypeScript, learn compiler config, decorators, React with TS, and Node.js integration."
+    },
+    {
+      "title": "Total TypeScript Tutorials",
+      "type": "interactive",
+      "platform": "Total TypeScript",
+      "url": "https://www.totaltypescript.com/tutorials",
+      "duration": "10 hours",
+      "description": "Interactive challenges covering type transformations, generics, and conditional types by Matt Pocock."
+    }
+  ],
+  "React": [
+    {
+      "title": "Official React Documentation (react.dev)",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://react.dev/learn",
+      "duration": "Self-paced",
+      "description": "The modern React documentation with interactive sandboxes, hooks, state management, and Server Components."
+    },
+    {
+      "title": "Epic React by Kent C. Dodds",
+      "type": "course",
+      "platform": "EpicReact.dev",
+      "url": "https://epicreact.dev/",
+      "duration": "20 hours",
+      "description": "Deep architectural patterns, performance optimization, custom hooks, and testing in enterprise React."
+    },
+    {
+      "title": "React 19 Crash Course",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=bMknfKXIFA8",
+      "duration": "3 hours",
+      "description": "Modern React course covering components, props, hooks, useActionState, and async transitions."
+    }
+  ],
+  "Next.js": [
+    {
+      "title": "Next.js Official Learn Course",
+      "type": "interactive",
+      "platform": "Official Docs",
+      "url": "https://nextjs.org/learn",
+      "duration": "10 hours",
+      "description": "Official interactive course covering the App Router, Server Components, streaming, routing, and deployment."
+    },
+    {
+      "title": "Next.js Enterprise Architecture",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/nextjs-react-the-complete-guide/",
+      "duration": "30 hours",
+      "description": "Production patterns with Next.js App Router, caching strategies, database connections, and authentication."
+    }
+  ],
+  "FastAPI": [
+    {
+      "title": "FastAPI Official Documentation & Tutorial",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://fastapi.tiangolo.com/tutorial/",
+      "duration": "Self-paced",
+      "description": "Comprehensive tutorial covering type hints, Pydantic v2 validation, dependency injection, OAuth2 JWT, and background tasks."
+    },
+    {
+      "title": "Test-Driven Development with FastAPI and Docker",
+      "type": "course",
+      "platform": "TestDriven.io",
+      "url": "https://testdriven.io/courses/fastapi-celery/",
+      "duration": "12 hours",
+      "description": "Learn to develop and test production-ready async microservices using FastAPI, SQLAlchemy, Alembic, and Docker."
+    },
+    {
+      "title": "Building Modern REST APIs with FastAPI",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=0sOvCWFmrtA",
+      "duration": "19 hours",
+      "description": "Extensive video tutorial covering relational databases, authentication, CRUD operations, and cloud deployment."
+    }
+  ],
+  "PostgreSQL": [
+    {
+      "title": "PostgreSQL Tutorial for Beginners & Pros",
+      "type": "interactive",
+      "platform": "PostgresTutorial.com",
+      "url": "https://www.postgresqltutorial.com/",
+      "duration": "15 hours",
+      "description": "Covers SQL querying, joins, window functions, indexes, JSONB columns, transactions, and performance tuning."
+    },
+    {
+      "title": "Official PostgreSQL 16/17 Manual",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://www.postgresql.org/docs/current/",
+      "duration": "Self-paced",
+      "description": "The definitive technical reference for SQL commands, server administration, indexing, and internal mechanics."
+    },
+    {
+      "title": "The Art of PostgreSQL",
+      "type": "book",
+      "platform": "The Art of PostgreSQL",
+      "url": "https://theartofpostgresql.com/",
+      "duration": "20 hours",
+      "description": "Teaches application developers to write powerful SQL and leverage PostgreSQL as an application engine."
+    }
+  ],
+  "Docker": [
+    {
+      "title": "Docker Official Getting Started Guide",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://docs.docker.com/get-started/",
+      "duration": "Self-paced",
+      "description": "Official guide to containerizing applications, writing Dockerfiles, managing volumes, and Compose stacks."
+    },
+    {
+      "title": "Docker & Kubernetes: The Practical Guide",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/docker-kubernetes-the-practical-guide/",
+      "duration": "23 hours",
+      "description": "Master containerization, multi-container deployments, networks, and production Kubernetes cluster setups."
+    },
+    {
+      "title": "Docker Tutorial for Beginners",
+      "type": "video",
+      "platform": "YouTube (TechWorld with Nana)",
+      "url": "https://www.youtube.com/watch?v=3c-iBn73dDE",
+      "duration": "3 hours",
+      "description": "Visual breakdown of images, containers, Docker Compose, environment variables, and Docker architecture."
+    }
+  ],
+  "Kubernetes": [
+    {
+      "title": "Kubernetes Official Documentation & Interactive Tutorials",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://kubernetes.io/docs/tutorials/",
+      "duration": "Self-paced",
+      "description": "Step-by-step guides to Deployments, Pods, Services, Ingress controllers, and ConfigMaps."
+    },
+    {
+      "title": "Certified Kubernetes Administrator (CKA) Course",
+      "type": "course",
+      "platform": "Mumshad Mannambeth (KodeKloud)",
+      "url": "https://kodekloud.com/courses/certified-kubernetes-administrator-cka/",
+      "duration": "25 hours",
+      "description": "Hands-on labs and real cluster troubleshooting for production cloud orchestration."
+    }
+  ],
+  "Machine Learning": [
+    {
+      "title": "Machine Learning Specialization by Andrew Ng",
+      "type": "course",
+      "platform": "Coursera (DeepLearning.AI)",
+      "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+      "duration": "45 hours",
+      "description": "Foundational curriculum covering Supervised Learning (Linear Regression, Logistic Regression), Neural Networks, and Unsupervised Learning."
+    },
+    {
+      "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/",
+      "duration": "40 hours",
+      "description": "The definitive practical reference for data pipelines, model evaluation, ensemble methods, and neural architectures."
+    },
+    {
+      "title": "StatQuest Machine Learning Video Series",
+      "type": "video",
+      "platform": "YouTube (StatQuest)",
+      "url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF",
+      "duration": "12 hours",
+      "description": "Crystal clear visual intuitions behind Bias-Variance, Decision Trees, Random Forests, SVMs, and PCA."
+    }
+  ],
+  "scikit-learn": [
+    {
+      "title": "scikit-learn Official User Guide",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://scikit-learn.org/stable/user_guide.html",
+      "duration": "Self-paced",
+      "description": "Comprehensive reference on pipelines, cross-validation, feature extraction, transformers, and estimators."
+    },
+    {
+      "title": "scikit-learn Course \u2014 Machine Learning in Python",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=0B5eIE_1vpU",
+      "duration": "5 hours",
+      "description": "End-to-end coding examples covering regression, classification, clustering, hyperparameter tuning, and model persistence with joblib."
+    }
+  ],
+  "PyTorch": [
+    {
+      "title": "PyTorch Official Tutorials \u2014 Deep Learning with PyTorch",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://pytorch.org/tutorials/",
+      "duration": "Self-paced",
+      "description": "Official tutorials covering Tensors, Autograd, building neural network modules, DataLoader pipelines, and GPU acceleration."
+    },
+    {
+      "title": "Practical Deep Learning for Coders",
+      "type": "course",
+      "platform": "fast.ai",
+      "url": "https://course.fast.ai/",
+      "duration": "35 hours",
+      "description": "Top-down practical deep learning course building state-of-the-art vision, NLP, and tabular models using PyTorch."
+    }
+  ],
+  "Pandas": [
+    {
+      "title": "Pandas Official 10-Minute Guide & Documentation",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://pandas.pydata.org/docs/user_guide/10min.html",
+      "duration": "Self-paced",
+      "description": "Quick overview of Series, DataFrames, indexing, filtering, groupby, and merging operations."
+    },
+    {
+      "title": "Data Analysis with Python and Pandas",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+      "duration": "6 hours",
+      "description": "Hands-on data cleaning, handling missing values, pivoting, time series, and aggregation."
+    }
+  ],
+  "NumPy": [
+    {
+      "title": "NumPy: The Absolute Basics for Beginners",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://numpy.org/doc/stable/user/absolute_beginners.html",
+      "duration": "Self-paced",
+      "description": "Foundational guide on ndarrays, vectorization, broadcasting, slicing, and linear algebra operations."
+    }
+  ],
+  "SQL": [
+    {
+      "title": "SQL for Data Science",
+      "type": "course",
+      "platform": "Coursera (UC Davis)",
+      "url": "https://www.coursera.org/learn/sql-for-data-science",
+      "duration": "14 hours",
+      "description": "Fundamentals of SQL querying, filtering, subqueries, aggregations, and window functions for analytics."
+    },
+    {
+      "title": "SQLBolt \u2014 Interactive Lessons",
+      "type": "interactive",
+      "platform": "SQLBolt",
+      "url": "https://sqlbolt.com/",
+      "duration": "4 hours",
+      "description": "Interactive in-browser SQL exercises taking you from simple SELECT queries to complex JOINs."
+    }
+  ],
+  "AWS": [
+    {
+      "title": "AWS Cloud Practitioner & Solutions Architect Essentials",
+      "type": "course",
+      "platform": "Coursera (AWS)",
+      "url": "https://www.coursera.org/learn/aws-cloud-technical-essentials",
+      "duration": "16 hours",
+      "description": "Official foundational overview of AWS compute (EC2, Lambda), storage (S3), networking (VPC), and databases (RDS)."
+    },
+    {
+      "title": "AWS Well-Architected Framework",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://aws.amazon.com/architecture/well-architected/",
+      "duration": "Self-paced",
+      "description": "Architectural pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization."
+    }
+  ],
+  "Terraform": [
+    {
+      "title": "HashiCorp Terraform Associate Certification Tutorial",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=V4wakeLKWD4",
+      "duration": "9 hours",
+      "description": "Comprehensive guide to HCL syntax, providers, state management, modules, and cloud provisioning."
+    },
+    {
+      "title": "Terraform Official Tutorials (HashiCorp Learn)",
+      "type": "interactive",
+      "platform": "Official Docs",
+      "url": "https://developer.hashicorp.com/terraform/tutorials",
+      "duration": "12 hours",
+      "description": "Interactive hands-on guides to provision infrastructure on AWS, Azure, and Google Cloud."
+    }
+  ],
+  "Git": [
+    {
+      "title": "Pro Git Book (2nd Edition)",
+      "type": "book",
+      "platform": "Official Docs",
+      "url": "https://git-scm.com/book/en/v2",
+      "duration": "15 hours",
+      "description": "Complete reference on Git internals, branching, rebasing, remote repositories, and advanced workflows."
+    },
+    {
+      "title": "Learn Git Branching \u2014 Interactive Visual Guide",
+      "type": "interactive",
+      "platform": "LearnGitBranching",
+      "url": "https://learngitbranching.js.org/",
+      "duration": "5 hours",
+      "description": "The most visual and interactive way to learn Git branching, merges, cherry-picks, and rebasing."
+    }
+  ],
+  "CI/CD": [
+    {
+      "title": "GitHub Actions Official Documentation",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://docs.github.com/en/actions",
+      "duration": "Self-paced",
+      "description": "Automate software workflows with CI/CD matrix builds, secrets management, and custom actions."
+    },
+    {
+      "title": "CI/CD Pipeline with GitHub Actions",
+      "type": "video",
+      "platform": "YouTube (TechWorld with Nana)",
+      "url": "https://www.youtube.com/watch?v=R8_veQiYBjI",
+      "duration": "1.5 hours",
+      "description": "Build, test, and automatically deploy Docker containers to cloud servers with GitHub Actions."
+    }
+  ],
+  "TailwindCSS": [
+    {
+      "title": "TailwindCSS Official Documentation (v4)",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://tailwindcss.com/docs",
+      "duration": "Self-paced",
+      "description": "Utility classes, CSS-first configuration, CSS grid, flexbox, responsive design, and dark mode."
+    }
+  ],
+  "System Design": [
+    {
+      "title": "The System Design Primer",
+      "type": "documentation",
+      "platform": "GitHub (donnemartin)",
+      "url": "https://github.com/donnemartin/system-design-primer",
+      "duration": "30 hours",
+      "description": "Open source guide covering scalability, caching, load balancing, replication, CAP theorem, and distributed systems."
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/",
+      "duration": "35 hours",
+      "description": "Martin Kleppmann's masterpiece on reliable, scalable, and maintainable systems."
+    }
+  ],
+  "Figma": [
+    {
+      "title": "Figma for Beginners",
+      "type": "video",
+      "platform": "YouTube (Figma Official)",
+      "url": "https://www.youtube.com/playlist?list=PLXDU_eVOJTx7QHLShNqIXL1Cgbxj7HlN4",
+      "duration": "4 hours",
+      "description": "Official series covering auto-layout, components, variants, design tokens, and interactive prototyping."
+    }
+  ],
+  "Linux": [
+    {
+      "title": "Linux Journey \u2014 Grassroots Learning Guide",
+      "type": "interactive",
+      "platform": "Linux Journey",
+      "url": "https://linuxjourney.com/",
+      "duration": "10 hours",
+      "description": "Interactive modules covering command line basics, permissions, processes, systemd services, and networking."
+    },
+    {
+      "title": "The Linux Command Line (2nd Edition)",
+      "type": "book",
+      "platform": "No Starch Press",
+      "url": "https://linuxcommand.org/tlcl.php",
+      "duration": "20 hours",
+      "description": "A complete introduction to the bash shell, shell scripting, pipes, redirection, and environment variables."
+    }
+  ],
+  "Redis": [
+    {
+      "title": "Redis University \u2014 RU101: Introduction to Redis Data Structures",
+      "type": "course",
+      "platform": "Redis University",
+      "url": "https://university.redis.com/courses/ru101/",
+      "duration": "8 hours",
+      "description": "Official course on strings, hashes, lists, sets, sorted sets, pub/sub, caching patterns, and key expiration."
+    },
+    {
+      "title": "Redis Official Documentation",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://redis.io/docs/latest/",
+      "duration": "Self-paced",
+      "description": "Architecture, command references, clustering, Redis Streams, and persistence models (RDB & AOF)."
+    }
+  ],
+  "React Native": [
+    {
+      "title": "React Native Official Getting Started Guide",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://reactnative.dev/docs/getting-started",
+      "duration": "Self-paced",
+      "description": "Official documentation covering core components, TurboModules, navigation, and native iOS/Android builds."
+    },
+    {
+      "title": "React Native - The Practical Guide",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/react-native-the-practical-guide/",
+      "duration": "28 hours",
+      "description": "Cross-platform mobile apps with Expo, bare React Native, navigation, SQLite, and native device features."
+    }
+  ],
+  "GraphQL": [
+    {
+      "title": "Official GraphQL Tutorial & Documentation",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://graphql.org/learn/",
+      "duration": "Self-paced",
+      "description": "Schema definition language (SDL), queries, mutations, resolvers, and best practices for API evolution."
+    }
+  ],
+  "LLMs": [
+    {
+      "title": "Generative AI with Large Language Models",
+      "type": "course",
+      "platform": "Coursera (DeepLearning.AI & AWS)",
+      "url": "https://www.coursera.org/learn/generative-ai-with-llms",
+      "duration": "16 hours",
+      "description": "Covers LLM lifecycle, transformer architecture, fine-tuning with PEFT/LoRA, RLHF, and deployment optimization."
+    },
+    {
+      "title": "Hugging Face Deep Learning & NLP Course",
+      "type": "interactive",
+      "platform": "Hugging Face",
+      "url": "https://huggingface.co/learn/nlp-course/",
+      "duration": "25 hours",
+      "description": "Hands-on guide to transformers, tokenizers, pipelines, dataset handling, and model sharing."
+    }
+  ]
+}
