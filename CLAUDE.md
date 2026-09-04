@@ -88,3 +88,10 @@ npm run build
 - **Async by Default**: All backend database queries and route handlers must use `async`/`await` with SQLAlchemy `AsyncSession`.
 - **Validation**: Strict schema validation using Pydantic v2 on backend and Zod on frontend.
 - **Documentation Integrity**: Maintain clean git commits aligning with phase descriptions in `PRIORITY.md`.
+
+---
+
+## 6. Testing & Verification Rules
+
+- **No Browser Automation / Opening**: Do NOT open the browser or use browser subagents/browser opening tools to run tests or perform verification.
+- **Verification Method**: Always verify changes via command-line tools: automated test suites (`pytest` for backend), compiler and build checks (`npm run build` for frontend), and direct programmatic assertions.

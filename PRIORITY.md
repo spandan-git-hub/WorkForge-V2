@@ -15,8 +15,7 @@ This is the master implementation guide. Follow each phase in order. Each phase 
 | Phase 2 | Database schema + migrations | ✅ Completed |
 | Phase 3 | Authentication (register, login, JWT) | ✅ Completed |
 | Phase 4 | User profile (read + update) | ✅ Completed |
-
-| Phase 5 | Skill inventory (CRUD + catalog) | |
+| Phase 5 | Skill inventory (CRUD + catalog) | ✅ Completed |
 | Phase 6 | Events (browse, filter, interest tracking) | |
 | Phase 7 | ML — Gap Analysis | |
 | Phase 8 | ML — Skill Recommender | |
