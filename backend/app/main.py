@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.routers import auth
 
 app = FastAPI(title="WorkForge API", version="1.0.0")
 
@@ -14,6 +15,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# API Routers
+app.include_router(auth.router, prefix="/api/v1")
+
 
 @app.get("/")
 def root():
@@ -23,3 +27,4 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+

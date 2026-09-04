@@ -13,8 +13,9 @@ This is the master implementation guide. Follow each phase in order. Each phase 
 |-------|----------------|--------|
 | Phase 1 | Project scaffolding & repo setup | ✅ Completed |
 | Phase 2 | Database schema + migrations | ✅ Completed |
-| Phase 3 | Authentication (register, login, JWT) | |
+| Phase 3 | Authentication (register, login, JWT) | ✅ Completed |
 | Phase 4 | User profile (read + update) | |
+
 | Phase 5 | Skill inventory (CRUD + catalog) | |
 | Phase 6 | Events (browse, filter, interest tracking) | |
 | Phase 7 | ML — Gap Analysis | |
