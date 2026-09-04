@@ -1,5 +1,4 @@
 import Badge from '../ui/Badge'
-import Button from '../ui/Button'
 
 export default function ResourceCard({ resource }) {
   const { title, type, platform, url, duration, description } = resource

@@ -23,3 +23,20 @@ class ProfileUpdateRequest(BaseModel):
     target_role: str | None = Field(default=None, max_length=255, description="Career target role")
 
     model_config = ConfigDict(from_attributes=True)
+
+
+from app.schemas.event import EventListItem
+from app.schemas.ml import GapItem
+
+
+class DashboardUserInfo(BaseModel):
+    name: str
+    target_role: str | None = None
+
+
+class DashboardResponse(BaseModel):
+    user: DashboardUserInfo
+    skill_count: int
+    proficiency_distribution: dict[str, int]
+    top_gaps: list[GapItem] | None = None
+    upcoming_events: list[EventListItem] = Field(default_factory=list)

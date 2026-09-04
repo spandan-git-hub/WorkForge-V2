@@ -10,6 +10,11 @@ export const profileApi = {
     const res = await axiosClient.patch('/api/v1/users/profile', data)
     return res.data
   },
+
+  async getDashboard() {
+    const res = await axiosClient.get('/api/v1/users/dashboard')
+    return res.data
+  },
 }
 
 export default profileApi
