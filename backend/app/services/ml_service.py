@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.ml.data_loader import get_available_roles, load_role_requirements
 from app.ml.gap_analyzer import gap_analyzer
 from app.ml.recommender import recommender
+from app.ml.resource_suggester import resource_suggester
 from app.models.ml_analysis import MLAnalysis
 from app.models.skill import SkillCatalog
 from app.models.user_skill import UserSkill
@@ -15,6 +16,8 @@ from app.schemas.ml import (
     GapItem,
     RecommendationItem,
     RecommendationsResponse,
+    ResourceItem,
+    ResourcesResponse,
 )
 
 
@@ -120,5 +123,19 @@ async def get_recommendations(
 
     return RecommendationsResponse(
         recommendations=[RecommendationItem(**r) for r in ranked_recommendations]
+    )
+
+
+async def get_resources(skill_name: str) -> ResourcesResponse:
+    """
+    Suggest curated learning resources (courses, official docs, videos, books, tutorials)
+    for a given skill using exact lookup and TF-IDF cosine similarity.
+    """
+    matched_resources = resource_suggester.suggest(skill_name)
+    canonical_skill = resource_suggester.get_canonical_skill_name(skill_name) or skill_name
+
+    return ResourcesResponse(
+        skill=canonical_skill,
+        resources=[ResourceItem(**r) for r in matched_resources],
     )
 

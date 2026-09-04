@@ -532,5 +532,659 @@
       "duration": "25 hours",
       "description": "Hands-on guide to transformers, tokenizers, pipelines, dataset handling, and model sharing."
     }
+  ],
+  "HTML5": [
+    {
+      "title": "MDN Web Docs \u2014 HTML: HyperText Markup Language",
+      "type": "documentation",
+      "platform": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "duration": "Self-paced",
+      "description": "The fundamental building block for web structure, semantic tags, forms, accessibility, and SEO."
+    },
+    {
+      "title": "Responsive Web Design Certification",
+      "type": "course",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+      "duration": "40 hours",
+      "description": "Learn semantic HTML5 and modern responsive layout principles through interactive coding projects."
+    },
+    {
+      "title": "HTML Full Course for Beginners",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=kUMe1FH4CHE",
+      "duration": "4 hours",
+      "description": "Comprehensive introduction to semantic elements, modern forms, audio/video embeds, and accessibility."
+    },
+    {
+      "title": "HTML and CSS: Design and Build Websites by Jon Duckett",
+      "type": "book",
+      "platform": "Wiley",
+      "url": "https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189",
+      "duration": "20 hours",
+      "description": "Visual, highly approachable guide to master HTML structure and webpage construction."
+    }
+  ],
+  "CSS3": [
+    {
+      "title": "MDN Web Docs \u2014 CSS: Cascading Style Sheets",
+      "type": "documentation",
+      "platform": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "duration": "Self-paced",
+      "description": "Official documentation covering Flexbox, Grid, animations, variables, and responsive design."
+    },
+    {
+      "title": "CSS - The Complete Guide 2026 (incl. Flexbox, Grid & Sass)",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/",
+      "duration": "23 hours",
+      "description": "Deep dive into layout modules, selectors, specificity, CSS animations, and production styling."
+    },
+    {
+      "title": "Kevin Powell: CSS Demystified",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@KevinPowell",
+      "duration": "Ongoing",
+      "description": "Master modern CSS properties, container queries, modern layout techniques, and subtle micro-interactions."
+    },
+    {
+      "title": "CSS Secrets: Better Solutions to Everyday Web Problems",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/css-secrets/9781449372736/",
+      "duration": "16 hours",
+      "description": "Award-winning techniques by Lea Verou solving difficult styling challenges with elegant CSS3."
+    }
+  ],
+  "Node.js": [
+    {
+      "title": "Official Node.js Documentation & Guides",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://nodejs.org/en/docs/guides",
+      "duration": "Self-paced",
+      "description": "Core architecture, event loop, worker threads, async I/O, streams, and native modules."
+    },
+    {
+      "title": "The Complete Node.js Developer Course (3rd Edition)",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/",
+      "duration": "35 hours",
+      "description": "Build robust, scalable backends using Node, Express, MongoDB, and modern asynchronous patterns."
+    },
+    {
+      "title": "Node.js Full Course for Beginners",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=Oe421EPjeBE",
+      "duration": "8 hours",
+      "description": "Hands-on walkthrough of server architecture, buffer, file system, HTTP server, and REST API development."
+    },
+    {
+      "title": "Node.js Design Patterns (3rd Edition)",
+      "type": "book",
+      "platform": "Packt",
+      "url": "https://www.nodejsdesignpatterns.com/",
+      "duration": "28 hours",
+      "description": "Master enterprise patterns, asynchronous control flows, scalability, and microservice architectures in Node."
+    }
+  ],
+  "Express.js": [
+    {
+      "title": "Express.js Official Documentation & API Reference",
+      "type": "documentation",
+      "platform": "Official Docs",
+      "url": "https://expressjs.com/",
+      "duration": "Self-paced",
+      "description": "Fast, unopinionated, minimalist web framework for Node.js, middleware pipelines, and routing."
+    },
+    {
+      "title": "Building RESTful APIs with Node.js and Express",
+      "type": "course",
+      "platform": "Pluralsight",
+      "url": "https://www.pluralsight.com/courses/nodejs-express-rest-api-building",
+      "duration": "5 hours",
+      "description": "Create scalable, secure APIs with routing, middleware, controllers, error handlers, and JWT security."
+    },
+    {
+      "title": "Express.js Crash Course",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=SccSCuHhOw0",
+      "duration": "1.5 hours",
+      "description": "Quick, practical walkthrough of creating an Express server, handling routes, middleware, and query params."
+    }
+  ],
+  "Go": [
+    {
+      "title": "A Tour of Go (Official Interactive Tour)",
+      "type": "interactive",
+      "platform": "Official Docs",
+      "url": "https://go.dev/tour/",
+      "duration": "6 hours",
+      "description": "Official interactive walkthrough covering Go syntax, structs, interfaces, goroutines, and channels."
+    },
+    {
+      "title": "Go: The Complete Developer's Guide (Golang)",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/go-the-complete-developers-guide/",
+      "duration": "10 hours",
+      "description": "Learn concurrency models, interfaces, structs, error handling, and testing in idiomatic Go by Stephen Grider."
+    },
+    {
+      "title": "Go Programming by Example",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=YS4e4q9oBaU",
+      "duration": "7 hours",
+      "description": "Deep exploration of backend web services, concurrency, and CLI tooling using Go."
+    },
+    {
+      "title": "The Go Programming Language by Alan Donovan & Brian Kernighan",
+      "type": "book",
+      "platform": "Addison-Wesley",
+      "url": "https://www.gopl.io/",
+      "duration": "30 hours",
+      "description": "The definitive authoritative book on writing clear, performant, and idiomatic Go programs."
+    }
+  ],
+  "REST APIs": [
+    {
+      "title": "RESTful Web Services Design & Architecture",
+      "type": "documentation",
+      "platform": "REST API Tutorial",
+      "url": "https://restfulapi.net/",
+      "duration": "Self-paced",
+      "description": "Foundational guide on HTTP verbs, status codes, idempotent operations, HATEOAS, and statelessness."
+    },
+    {
+      "title": "Designing RESTful APIs",
+      "type": "course",
+      "platform": "Udacity",
+      "url": "https://www.udacity.com/course/designing-restful-apis--ud388",
+      "duration": "8 hours",
+      "description": "Learn proper URI structuring, pagination, authentication, rate limiting, and versioning."
+    },
+    {
+      "title": "REST API Design Best Practices",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=-mN3VyJuCjM",
+      "duration": "1 hour",
+      "description": "Clear guidelines on creating predictable, secure, and clean APIs for modern clients."
+    },
+    {
+      "title": "REST in Practice: Hypermedia and Systems Architecture",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/rest-in-practice/9781449383312/",
+      "duration": "18 hours",
+      "description": "Comprehensive guide on scalable distributed system integration using RESTful architectural principles."
+    }
+  ],
+  "Microservices": [
+    {
+      "title": "Microservice Architecture Patterns by Chris Richardson",
+      "type": "documentation",
+      "platform": "Microservices.io",
+      "url": "https://microservices.io/",
+      "duration": "Self-paced",
+      "description": "Complete catalog of decomposition patterns, saga transactions, API gateways, and CQRS."
+    },
+    {
+      "title": "Microservices with Node JS and React",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/microservices-with-node-js-and-react/",
+      "duration": "54 hours",
+      "description": "Build an event-driven distributed system using Docker, Kubernetes, and asynchronous message buses."
+    },
+    {
+      "title": "Building Microservices: Designing Fine-Grained Systems (2nd Edition)",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/",
+      "duration": "30 hours",
+      "description": "Sam Newman's essential industry handbook on service boundaries, deployment, monitoring, and security."
+    }
+  ],
+  "Kafka": [
+    {
+      "title": "Apache Kafka Official Documentation & Quickstart",
+      "type": "documentation",
+      "platform": "Apache Kafka",
+      "url": "https://kafka.apache.org/documentation/",
+      "duration": "Self-paced",
+      "description": "Distributed event streaming platform, producers, consumers, broker clusters, partitions, and topics."
+    },
+    {
+      "title": "Apache Kafka Series: Learn Apache Kafka for Beginners",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/apache-kafka/",
+      "duration": "9 hours",
+      "description": "Hands-on Kafka ecosystem course covering CLI commands, Java/Python clients, consumer groups, and keys."
+    },
+    {
+      "title": "Kafka: The Definitive Guide (2nd Edition)",
+      "type": "book",
+      "platform": "O'Reilly / Confluent",
+      "url": "https://www.confluent.io/resources/kafka-the-definitive-guide-2nd-edition/",
+      "duration": "25 hours",
+      "description": "Architectural guide covering stream processing, replication, low-latency messaging, and cluster reliability."
+    }
+  ],
+  "Google Cloud Platform": [
+    {
+      "title": "Google Cloud Architecture Framework & Documentation",
+      "type": "documentation",
+      "platform": "Google Cloud",
+      "url": "https://cloud.google.com/architecture/framework",
+      "duration": "Self-paced",
+      "description": "Official guides for Compute Engine, Cloud Run, GKE, BigQuery, IAM, and VPC networking."
+    },
+    {
+      "title": "Google Associate Cloud Engineer Certification",
+      "type": "course",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/professional-certificates/gcp-cloud-architect",
+      "duration": "40 hours",
+      "description": "Hands-on labs and preparation for provisioning, configuring, and monitoring GCP infrastructure."
+    },
+    {
+      "title": "GCP Full Course in 8 Hours",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=JPno1vFj3wQ",
+      "duration": "8 hours",
+      "description": "Comprehensive tutorial walking through GCP cloud services, storage, serverless functions, and security."
+    }
+  ],
+  "GitHub Actions": [
+    {
+      "title": "GitHub Actions Documentation & Quickstart",
+      "type": "documentation",
+      "platform": "GitHub Docs",
+      "url": "https://docs.github.com/en/actions",
+      "duration": "Self-paced",
+      "description": "Automate, customize, and execute software development workflows in your repository with YAML files."
+    },
+    {
+      "title": "GitHub Actions - The Complete Guide",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/github-actions-the-complete-guide/",
+      "duration": "11 hours",
+      "description": "Build CI/CD pipelines, custom composite actions, secrets management, matrix builds, and automated deployments."
+    },
+    {
+      "title": "Automate Everything with GitHub Actions",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=R8_veQiYBjI",
+      "duration": "2.5 hours",
+      "description": "Practical setup for automated test runs, Docker container publishing, and automated releases."
+    }
+  ],
+  "Bash / Shell": [
+    {
+      "title": "GNU Bash Reference Manual",
+      "type": "documentation",
+      "platform": "GNU",
+      "url": "https://www.gnu.org/software/bash/manual/",
+      "duration": "Self-paced",
+      "description": "Complete syntax, parameter expansion, pipes, process substitution, and shell script automation."
+    },
+    {
+      "title": "Bash Scripting and Shell Programming (Linux Command Line)",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/bash-scripting/",
+      "duration": "12 hours",
+      "description": "Write practical shell scripts for cron jobs, DevOps automation, text parsing with awk and sed, and logging."
+    },
+    {
+      "title": "The Linux Command Line: A Complete Introduction",
+      "type": "book",
+      "platform": "No Starch Press",
+      "url": "https://linuxcommand.org/tlcl.php",
+      "duration": "22 hours",
+      "description": "William Shotts' classic handbook from basic terminal commands to advanced shell automation."
+    }
+  ],
+  "Prometheus": [
+    {
+      "title": "Prometheus Official Documentation & Overview",
+      "type": "documentation",
+      "platform": "Prometheus.io",
+      "url": "https://prometheus.io/docs/introduction/overview/",
+      "duration": "Self-paced",
+      "description": "Open-source monitoring system and time series database, PromQL queries, alerting rules, and exporters."
+    },
+    {
+      "title": "Monitoring Systems and Services with Prometheus",
+      "type": "course",
+      "platform": "Pluralsight",
+      "url": "https://www.pluralsight.com/courses/monitoring-systems-services-prometheus",
+      "duration": "4 hours",
+      "description": "Set up targets, scrape configurations, node exporters, and custom application instrumentation."
+    },
+    {
+      "title": "Prometheus: Up & Running (2nd Edition)",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://www.oreilly.com/library/view/prometheus-up/9781098131135/",
+      "duration": "20 hours",
+      "description": "Infrastructure and application performance monitoring, alerting strategies, and service discovery."
+    }
+  ],
+  "Grafana": [
+    {
+      "title": "Grafana Official Documentation & Tutorials",
+      "type": "documentation",
+      "platform": "Grafana Labs",
+      "url": "https://grafana.com/docs/grafana/latest/",
+      "duration": "Self-paced",
+      "description": "Visualize metrics, logs, and traces from Prometheus, PostgreSQL, Elasticsearch, and CloudWatch."
+    },
+    {
+      "title": "Grafana Deep Dive: Metrics & Dashboards",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/grafana-dashboards/",
+      "duration": "6 hours",
+      "description": "Design stunning real-time observability dashboards with panels, alerting thresholds, and variables."
+    },
+    {
+      "title": "Observability with Prometheus and Grafana",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=9TYX7HKtr3I",
+      "duration": "3 hours",
+      "description": "End-to-end tutorial linking Prometheus telemetry to dynamic Grafana visualization dashboards."
+    }
+  ],
+  "Pytest": [
+    {
+      "title": "pytest Documentation & Reference",
+      "type": "documentation",
+      "platform": "pytest.org",
+      "url": "https://docs.pytest.org/en/stable/",
+      "duration": "Self-paced",
+      "description": "Full reference for test discovery, fixtures, parameterization, mocking, and pytest-asyncio."
+    },
+    {
+      "title": "Python Testing with pytest (2nd Edition) by Brian Okken",
+      "type": "book",
+      "platform": "Pragmatic Bookshelf",
+      "url": "https://pragprog.com/titles/bopytest2/python-testing-with-pytest-second-edition/",
+      "duration": "16 hours",
+      "description": "The gold standard book on writing readable, maintainable, and fast unit and integration tests."
+    },
+    {
+      "title": "Complete pytest Course: Zero to Hero",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=byaxg00Gf9I",
+      "duration": "3 hours",
+      "description": "Learn test fixtures, assertions, parametrize decorators, and mocking external APIs in Python."
+    }
+  ],
+  "Cypress": [
+    {
+      "title": "Cypress Official Documentation & Guides",
+      "type": "documentation",
+      "platform": "Cypress.io",
+      "url": "https://docs.cypress.io/",
+      "duration": "Self-paced",
+      "description": "Fast, reliable end-to-end and component testing framework running directly in the browser."
+    },
+    {
+      "title": "Cypress: Web Automation Testing from Zero to Hero",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/cypress-web-automation-testing/",
+      "duration": "18 hours",
+      "description": "Master E2E testing, custom commands, stubbing network requests, CI integration, and test fixtures."
+    },
+    {
+      "title": "Cypress End-to-End Testing Crash Course",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=7N63cMKosIE",
+      "duration": "3.5 hours",
+      "description": "Hands-on setup, writing tests, assertions, intercepts, and continuous integration execution."
+    }
+  ],
+  "Playwright": [
+    {
+      "title": "Playwright for Python & JavaScript Documentation",
+      "type": "documentation",
+      "platform": "Microsoft Playwright",
+      "url": "https://playwright.dev/",
+      "duration": "Self-paced",
+      "description": "Cross-browser automation and E2E testing for Chromium, Firefox, and WebKit with auto-waiting."
+    },
+    {
+      "title": "Playwright: Modern End to End Testing",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/playwright-fast-and-reliable-end-to-end-testing/",
+      "duration": "14 hours",
+      "description": "Learn headless browser automation, trace viewer, mobile emulation, and resilient test assertions."
+    },
+    {
+      "title": "Playwright Full Course 2026",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=Xz6lhEzgI5I",
+      "duration": "4 hours",
+      "description": "Comprehensive tutorial covering locators, page objects pattern, API mock responses, and parallelism."
+    }
+  ],
+  "Selenium": [
+    {
+      "title": "Selenium WebDriver Official Documentation",
+      "type": "documentation",
+      "platform": "Selenium.dev",
+      "url": "https://www.selenium.dev/documentation/",
+      "duration": "Self-paced",
+      "description": "Browser automation across multiple languages, grid clusters, wait strategies, and locator strategies."
+    },
+    {
+      "title": "Selenium WebDriver with Python / Java",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/selenium-webdriver-with-python-from-scratch-basics-to-framework/",
+      "duration": "20 hours",
+      "description": "Design modular test automation frameworks, Page Object Model (POM), data-driven testing, and reporting."
+    },
+    {
+      "title": "Selenium Automation in Python Full Course",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=j7VZsCCnptM",
+      "duration": "4.5 hours",
+      "description": "Hands-on scraping and automated testing using modern Selenium 4 WebDriver."
+    }
+  ],
+  "Deep Learning": [
+    {
+      "title": "Deep Learning Specialization by Andrew Ng",
+      "type": "course",
+      "platform": "Coursera / DeepLearning.AI",
+      "url": "https://www.coursera.org/specializations/deep-learning",
+      "duration": "80 hours",
+      "description": "Foundational series on neural networks, backpropagation, CNNs, Sequence Models, and optimization."
+    },
+    {
+      "title": "Deep Learning by Ian Goodfellow, Yoshua Bengio & Aaron Courville",
+      "type": "book",
+      "platform": "MIT Press",
+      "url": "https://www.deeplearningbook.org/",
+      "duration": "60 hours",
+      "description": "The quintessential textbook on linear algebra, probability, deep feedforward nets, and representation learning."
+    },
+    {
+      "title": "Practical Deep Learning for Coders",
+      "type": "course",
+      "platform": "fast.ai",
+      "url": "https://course.fast.ai/",
+      "duration": "30 hours",
+      "description": "Top-down, code-first introduction to modern computer vision, NLP, and tabular deep learning models."
+    },
+    {
+      "title": "Neural Networks: Zero to Hero by Andrej Karpathy",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+      "duration": "18 hours",
+      "description": "Build backprop, micrograd, makemore, and GPT from scratch using pure Python and PyTorch."
+    }
+  ],
+  "R": [
+    {
+      "title": "The R Project for Statistical Computing",
+      "type": "documentation",
+      "platform": "R Project",
+      "url": "https://www.r-project.org/other-docs.html",
+      "duration": "Self-paced",
+      "description": "Comprehensive statistical analysis, graphics capabilities, CRAN packages, and vector programming."
+    },
+    {
+      "title": "Data Science: R Basics Specialization",
+      "type": "course",
+      "platform": "edX / Harvard University",
+      "url": "https://www.edx.org/certificates/professional-certificate/harvardx-data-science",
+      "duration": "40 hours",
+      "description": "Probability, inference, regression, data wrangling with tidyverse, and data visualization with ggplot2."
+    },
+    {
+      "title": "R for Data Science (2nd Edition) by Hadley Wickham",
+      "type": "book",
+      "platform": "O'Reilly",
+      "url": "https://r4ds.hadley.nz/",
+      "duration": "35 hours",
+      "description": "The modern standard text on exploratory data analysis, tidyr, dplyr, ggplot2, and reproducible reports."
+    }
+  ],
+  "Android Development": [
+    {
+      "title": "Android Developers Official Documentation & Codelabs",
+      "type": "documentation",
+      "platform": "Google Android",
+      "url": "https://developer.android.com/courses",
+      "duration": "Self-paced",
+      "description": "Modern Android development with Kotlin, Jetpack Compose, Coroutines, Room DB, and architecture guides."
+    },
+    {
+      "title": "Android Basics with Compose",
+      "type": "course",
+      "platform": "Google Developers",
+      "url": "https://developer.android.com/courses/android-basics-compose/course",
+      "duration": "50 hours",
+      "description": "Build modern, native Android apps from UI declarations in Jetpack Compose to network calls and state handling."
+    },
+    {
+      "title": "Kotlin Android Development Tutorial",
+      "type": "video",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=fis26HvvDAg",
+      "duration": "12 hours",
+      "description": "Build multiple functional apps learning Android Studio, layouts, lifecycle, navigation, and API integration."
+    }
+  ],
+  "iOS Development": [
+    {
+      "title": "Apple Developer Documentation \u2014 Swift & SwiftUI",
+      "type": "documentation",
+      "platform": "Apple Developer",
+      "url": "https://developer.apple.com/tutorials/swiftui",
+      "duration": "Self-paced",
+      "description": "Declarative UI design with SwiftUI, async/await in Swift, Core Data, and iOS app lifecycle."
+    },
+    {
+      "title": "100 Days of SwiftUI by Paul Hudson",
+      "type": "course",
+      "platform": "Hacking with Swift",
+      "url": "https://www.hackingwithswift.com/100/swiftui",
+      "duration": "100 hours",
+      "description": "World-renowned free curriculum covering Swift syntax, SwiftUI views, animations, navigation, and complete app builds."
+    },
+    {
+      "title": "Swift Programming Tutorial for Beginners",
+      "type": "video",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=comQ1-x2a1Q",
+      "duration": "7 hours",
+      "description": "Learn Swift basics, optionals, closures, Xcode interface, and app deployment to the App Store."
+    }
+  ],
+  "UI/UX Design": [
+    {
+      "title": "Nielsen Norman Group UX Research Articles & Reports",
+      "type": "documentation",
+      "platform": "NN/g",
+      "url": "https://www.nngroup.com/articles/",
+      "duration": "Self-paced",
+      "description": "Evidence-based usability research, interaction design heuristics, user journey mapping, and wireframing."
+    },
+    {
+      "title": "Google UX Design Professional Certificate",
+      "type": "course",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-ux-design",
+      "duration": "6 months",
+      "description": "Complete foundation in UX research, empathetic design, usability testing, and cross-platform prototyping."
+    },
+    {
+      "title": "The Design of Everyday Things by Don Norman",
+      "type": "book",
+      "platform": "Basic Books",
+      "url": "https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654",
+      "duration": "15 hours",
+      "description": "The seminal treatise on human-centered design, affordances, feedback loops, and intuitive user experiences."
+    },
+    {
+      "title": "Refactoring UI by Adam Wathan & Steve Schoger",
+      "type": "book",
+      "platform": "Refactoring UI",
+      "url": "https://www.refactoringui.com/",
+      "duration": "10 hours",
+      "description": "Practical tactical tips for software developers to design clean, modern, and beautiful user interfaces."
+    }
+  ],
+  "Agile / Scrum": [
+    {
+      "title": "The Scrum Guide by Ken Schwaber and Jeff Sutherland",
+      "type": "documentation",
+      "platform": "ScrumGuides.org",
+      "url": "https://scrumguides.org/scrum-guide.html",
+      "duration": "1 hour",
+      "description": "The definitive rules of the game: Scrum roles, sprint ceremonies, artifacts, sprint backlogs, and definitions of done."
+    },
+    {
+      "title": "Agile Crash Course: Agile Project Management & Scrum",
+      "type": "course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/agile-crash-course/",
+      "duration": "3 hours",
+      "description": "Learn user stories, estimation techniques, velocity tracking, kanban boards, and sprint retrospectives."
+    },
+    {
+      "title": "Agile Software Development: Principles, Patterns, and Practices",
+      "type": "book",
+      "platform": "Pearson",
+      "url": "https://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445",
+      "duration": "25 hours",
+      "description": "Uncle Bob Martin's foundational principles connecting Agile planning with Clean Code engineering."
+    }
   ]
 }

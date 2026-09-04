@@ -8,6 +8,7 @@ from app.core.security import create_access_token
 from app.ml.data_loader import get_available_roles, load_role_requirements
 from app.ml.gap_analyzer import GapAnalyzer, gap_analyzer
 from app.ml.recommender import SkillRecommender, recommender
+from app.ml.resource_suggester import ResourceSuggester, resource_suggester
 from app.models.ml_analysis import MLAnalysis
 from app.models.user import User
 
@@ -272,4 +273,90 @@ async def test_recommendations_endpoint_success(client: AsyncClient):
         assert item["skill"]
         assert item["reason"]
         assert "target:" in item["reason"].lower() or "level" in item["reason"].lower()
+
+
+@pytest.mark.asyncio
+async def test_resource_suggester_unit():
+    """Test ResourceSuggester unit logic: exact matches, fuzzy/typo matching, ranking, and empty query."""
+    suggester = ResourceSuggester()
+
+    # 1. Exact match
+    py_res = suggester.suggest("Python")
+    assert len(py_res) >= 3
+    assert any("python" in r["title"].lower() for r in py_res)
+    # Check fields
+    for r in py_res:
+        assert "title" in r
+        assert "type" in r
+        assert "platform" in r
+        assert "url" in r
+
+    # 2. Case insensitivity
+    py_lower = suggester.suggest("python")
+    assert len(py_lower) == len(py_res)
+    assert py_lower[0]["title"] == py_res[0]["title"]
+
+    # 3. Typo fuzzy matching (e.g. Pyhton -> Python)
+    typo_res = suggester.suggest("Pyhton")
+    assert len(typo_res) > 0
+    assert any("python" in r["title"].lower() for r in typo_res)
+
+    # 4. Fuzzy matching with whitespace/variations
+    fuzzy_res = suggester.suggest("  react js  ")
+    assert len(fuzzy_res) > 0
+
+    # 5. Completely unrecognized skill
+    unknown_res = suggester.suggest("XYZCompletelyNonExistentSkill999")
+    assert unknown_res == []
+
+    # 6. Empty query
+    empty_res = suggester.suggest("   ")
+    assert empty_res == []
+
+
+@pytest.mark.asyncio
+async def test_get_resources_endpoint_unauthorized(client: AsyncClient):
+    """GET /api/v1/ml/resources/{skill_name} requires authentication."""
+    res = await client.get("/api/v1/ml/resources/Python")
+    assert res.status_code == 401
+
+
+@pytest.mark.asyncio
+async def test_get_resources_endpoint_exact_and_fuzzy(client: AsyncClient):
+    """Test authenticated GET /api/v1/ml/resources/{skill_name} for exact, typo, and unknown skill."""
+    # Register user
+    email = f"resuser_{uuid.uuid4().hex[:8]}@example.com"
+    reg_res = await client.post(
+        "/api/v1/auth/register",
+        json={"name": "Resource Tester", "email": email, "password": "password123"},
+    )
+    assert reg_res.status_code == 201
+    token = reg_res.json()["token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    # 1. Exact match for Python
+    res_exact = await client.get("/api/v1/ml/resources/Python", headers=headers)
+    assert res_exact.status_code == 200
+    data_exact = res_exact.json()
+    assert data_exact["skill"] == "Python"
+    assert len(data_exact["resources"]) >= 3
+    assert data_exact["resources"][0]["url"].startswith("http")
+
+    # 2. Case insensitive
+    res_case = await client.get("/api/v1/ml/resources/python", headers=headers)
+    assert res_case.status_code == 200
+    assert len(res_case.json()["resources"]) == len(data_exact["resources"])
+
+    # 3. Typo fuzzy match
+    res_typo = await client.get("/api/v1/ml/resources/Pyhton", headers=headers)
+    assert res_typo.status_code == 200
+    data_typo = res_typo.json()
+    assert data_typo["skill"] == "Python"
+    assert len(data_typo["resources"]) > 0
+
+    # 4. Unknown skill
+    res_unknown = await client.get("/api/v1/ml/resources/XYZRandomSkill123", headers=headers)
+    assert res_unknown.status_code == 200
+    data_unknown = res_unknown.json()
+    assert data_unknown["resources"] == []
 

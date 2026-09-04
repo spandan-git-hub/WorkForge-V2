@@ -19,7 +19,7 @@ This is the master implementation guide. Follow each phase in order. Each phase 
 | Phase 6 | Events (browse, filter, interest tracking) | ✅ Completed |
 | Phase 7 | ML — Gap Analysis | ✅ Completed |
 | Phase 8 | ML — Skill Recommender | ✅ Completed |
-| Phase 9 | ML — Resource Suggester | |
+| Phase 9 | ML — Resource Suggester | ✅ Completed |
 | Phase 10 | Dashboard (summary view) | |
 | Phase 11 | Polish, error handling, loading states | |
 | Phase 12 | Deployment — Render + Vercel | |
@@ -1411,15 +1411,15 @@ Commit: `git commit -m "chore: production deployment config"`.
 - [x] AIInsightsPage Section A built
 
 ### Phase 8 — Recommender
-- [ ] Recommender weighted scoring implemented
-- [ ] Recommendations endpoint works
-- [ ] AIInsightsPage Section B built
+- [x] Recommender weighted scoring implemented
+- [x] Recommendations endpoint works
+- [x] AIInsightsPage Section B built
 
 ### Phase 9 — Resource Suggester
-- [ ] `skill_resources.json` curated for 40+ skills
-- [ ] TF-IDF fuzzy skill matching working
-- [ ] Resources endpoint works
-- [ ] AIInsightsPage Section C built
+- [x] `skill_resources.json` curated for 40+ skills
+- [x] TF-IDF fuzzy skill matching working
+- [x] Resources endpoint works
+- [x] AIInsightsPage Section C built
 
 ### Phase 10 — Dashboard
 - [ ] Dashboard data endpoint works (aggregated)

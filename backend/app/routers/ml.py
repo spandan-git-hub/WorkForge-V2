@@ -8,6 +8,7 @@ from app.schemas.ml import (
     GapAnalysisRequest,
     GapAnalysisResponse,
     RecommendationsResponse,
+    ResourcesResponse,
 )
 from app.services import ml_service
 
@@ -68,4 +69,22 @@ async def get_recommendations(
         db=db,
         user_id=current_user.id,
     )
+
+
+@router.get(
+    "/resources/{skill_name}",
+    response_model=ResourcesResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Get curated learning resources and courses for a specific skill",
+)
+async def get_skill_resources(
+    skill_name: str,
+    current_user: User = Depends(get_current_user),
+) -> ResourcesResponse:
+    """
+    Retrieve curated courses, documentation, tutorials, videos, and books
+    for a given skill. Features exact matching and TF-IDF fuzzy matching
+    to accommodate typos and variations.
+    """
+    return await ml_service.get_resources(skill_name=skill_name)
 

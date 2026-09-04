@@ -7,7 +7,8 @@ import Badge from '../../components/ui/Badge'
 import Skeleton from '../../components/ui/Skeleton'
 import GapAnalysisChart from '../../components/ml/GapAnalysisChart'
 import RecommendedSkillCard from '../../components/ml/RecommendedSkillCard'
-import { getAvailableRoles, runGapAnalysis, getRecommendations } from '../../api/mlApi'
+import ResourceCard from '../../components/ml/ResourceCard'
+import { getAvailableRoles, runGapAnalysis, getRecommendations, getResources } from '../../api/mlApi'
 import { queryKeys } from '../../store/queryKeys'
 import { useAuth } from '../../hooks/useAuth'
 import { useToast } from '../../hooks/useToast'
@@ -18,10 +19,11 @@ export default function AIInsightsPage() {
   const toast = useToast()
   const queryClient = useQueryClient()
 
-  const [activeTab, setActiveTab] = useState('all') // 'all' | 'gap-analysis' | 'recommendations'
+  const [activeTab, setActiveTab] = useState('all') // 'all' | 'gap-analysis' | 'recommendations' | 'resources'
   const [selectedRole, setSelectedRole] = useState('')
   const [analysisResult, setAnalysisResult] = useState(null)
-  const [selectedSkillPreview, setSelectedSkillPreview] = useState(null)
+  const [selectedResourceSkill, setSelectedResourceSkill] = useState('')
+  const [searchSkillInput, setSearchSkillInput] = useState('')
 
   // 1. Fetch available roles from backend
   const {
@@ -60,7 +62,35 @@ export default function AIInsightsPage() {
     staleTime: 5 * 60 * 1000,
   })
 
-  // 3. Gap analysis mutation
+  const recommendations = recommendationsData?.recommendations || []
+
+  // Pre-fill selectedResourceSkill if not selected yet and recommendations exist
+  useEffect(() => {
+    if (!selectedResourceSkill) {
+      if (recommendations.length > 0) {
+        setSelectedResourceSkill(recommendations[0].skill)
+      } else if (analysisResult?.gaps?.length > 0) {
+        setSelectedResourceSkill(analysisResult.gaps[0].skill)
+      }
+    }
+  }, [recommendations, analysisResult, selectedResourceSkill])
+
+  // 3. Learning Resources Query (Phase 9)
+  const {
+    data: resourcesData,
+    isLoading: isResourcesLoading,
+    isError: isResourcesError,
+    error: resourcesError,
+    refetch: refetchResources,
+    isFetching: isResourcesFetching,
+  } = useQuery({
+    queryKey: queryKeys.ml.resources(selectedResourceSkill),
+    queryFn: () => getResources(selectedResourceSkill),
+    enabled: Boolean(selectedResourceSkill && selectedResourceSkill.trim().length > 0),
+    staleTime: 5 * 60 * 1000,
+  })
+
+  // 4. Gap analysis mutation
   const gapMutation = useMutation({
     mutationFn: (role) => runGapAnalysis(role),
     onSuccess: (data) => {
@@ -85,18 +115,37 @@ export default function AIInsightsPage() {
   }
 
   const handleViewResources = (skillName) => {
-    setSelectedSkillPreview(skillName)
-    toast.info(
-      `Resource suggestions for "${skillName}" will be available in Phase 9!`,
-      { duration: 4000 }
-    )
-    const element = document.getElementById('phase-9-preview')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    setSelectedResourceSkill(skillName)
+    setSearchSkillInput('')
+    if (activeTab === 'recommendations' || activeTab === 'gap-analysis') {
+      setActiveTab('resources')
     }
+    setTimeout(() => {
+      const element = document.getElementById('section-c-resources')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
   }
 
-  const recommendations = recommendationsData?.recommendations || []
+  const handleSearchCustomSkill = (e) => {
+    e?.preventDefault()
+    const clean = searchSkillInput.trim()
+    if (!clean) {
+      toast.error('Please enter a skill name to search resources.')
+      return
+    }
+    setSelectedResourceSkill(clean)
+    if (activeTab !== 'all' && activeTab !== 'resources') {
+      setActiveTab('resources')
+    }
+    setTimeout(() => {
+      const element = document.getElementById('section-c-resources')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  }
 
   // Calculate quick metrics from results
   const totalGaps = analysisResult?.gaps?.length || 0
@@ -163,13 +212,23 @@ export default function AIInsightsPage() {
 
           <button
             type="button"
-            disabled
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-text-muted text-sm font-medium opacity-60 cursor-not-allowed"
+            onClick={() => setActiveTab('resources')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+              activeTab === 'resources'
+                ? 'bg-primary text-white shadow-sm'
+                : 'text-text-muted hover:text-text bg-surface hover:bg-surface-hover'
+            }`}
           >
             <span>Section C: Learning Resources</span>
-            <Badge variant="neutral" size="sm">
-              Phase 9
-            </Badge>
+            {selectedResourceSkill ? (
+              <Badge variant="primary" size="sm">
+                {selectedResourceSkill}
+              </Badge>
+            ) : (
+              <Badge variant="neutral" size="sm">
+                50+ Skills
+              </Badge>
+            )}
           </button>
         </div>
 
@@ -508,32 +567,264 @@ export default function AIInsightsPage() {
           </div>
         )}
 
-        {/* SECTION C PREVIEW / STUB (Phase 9) */}
-        {selectedSkillPreview && (
-          <div
-            id="phase-9-preview"
-            className="p-5 rounded-2xl bg-gradient-to-r from-primary/10 via-surface-card to-surface-card border border-primary/30 space-y-3"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Badge variant="primary" size="sm">
-                  Phase 9 Preview
-                </Badge>
-                <h4 className="font-semibold text-text text-sm">
-                  Curated Resources for <span className="text-primary font-bold">{selectedSkillPreview}</span>
-                </h4>
+        {/* SECTION C: Curated Learning Resources Section (Phase 9) */}
+        {(activeTab === 'all' || activeTab === 'resources') && (
+          <div id="section-c-resources" className="space-y-6 pt-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/60 pb-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-xl font-bold text-text tracking-tight">
+                    Section C: Curated Learning Resources
+                  </h2>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/15 text-indigo-300 border border-primary/30">
+                    Phase 9
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-text-muted mt-1">
+                  NLP-powered resource suggestions utilizing character-level TF-IDF cosine similarity to match recommended skills with top courses, documentation, and videos.
+                </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setSelectedSkillPreview(null)}
-                className="text-xs text-text-muted hover:text-text"
-              >
-                ✕ Close
-              </button>
+
+              {selectedResourceSkill && (
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    isLoading={isResourcesFetching}
+                    onClick={() => refetchResources()}
+                    className="text-xs whitespace-nowrap"
+                  >
+                    Refresh Resources
+                  </Button>
+                </div>
+              )}
             </div>
-            <p className="text-xs text-text-muted">
-              In Phase 9 (Resource Suggester), TF-IDF machine learning models will curate top-rated courses, books, and official documentation tailored to this skill.
-            </p>
+
+            {/* Quick Skill Selector & Custom Search Bar */}
+            <Card className="p-4 bg-surface-card/90">
+              <div className="space-y-4">
+                {/* Search Input for Any Skill */}
+                <form
+                  onSubmit={handleSearchCustomSkill}
+                  className="flex flex-col sm:flex-row items-center gap-2.5 max-w-xl"
+                >
+                  <div className="relative flex-1 w-full">
+                    <input
+                      type="text"
+                      value={searchSkillInput}
+                      onChange={(e) => setSearchSkillInput(e.target.value)}
+                      placeholder="Search resources for any skill (e.g. Python, Docker, Kubernetes)..."
+                      className="w-full bg-surface border border-border rounded-lg pl-9 pr-3.5 py-2 text-xs sm:text-sm text-text placeholder:text-text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                    />
+                    <svg
+                      className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <circle cx="11" cy="11" r="8" />
+                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                  </div>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="sm"
+                    className="w-full sm:w-auto text-xs whitespace-nowrap"
+                  >
+                    Explore Resources
+                  </Button>
+                </form>
+
+                {/* Quick Selection Pills from Recommendations & Gaps */}
+                {(recommendations.length > 0 || analysisResult?.gaps?.length > 0) && (
+                  <div className="pt-2 border-t border-border/50">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                        Quick Select Target Skills:
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {recommendations.map((rec) => {
+                        const isSelected = selectedResourceSkill?.toLowerCase() === rec.skill.toLowerCase()
+                        return (
+                          <button
+                            key={rec.skill}
+                            type="button"
+                            onClick={() => {
+                              setSelectedResourceSkill(rec.skill)
+                              setSearchSkillInput('')
+                            }}
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                              isSelected
+                                ? 'bg-primary text-white shadow-sm ring-2 ring-primary/40'
+                                : 'bg-surface hover:bg-surface-hover text-text-muted hover:text-text border border-border/70'
+                            }`}
+                          >
+                            <span>#{rec.priority}</span>
+                            <span className="font-semibold">{rec.skill}</span>
+                          </button>
+                        )
+                      })}
+
+                      {/* If no recommendations yet, show pills from gap analysis */}
+                      {recommendations.length === 0 &&
+                        analysisResult?.gaps?.slice(0, 6).map((gap) => {
+                          const isSelected = selectedResourceSkill?.toLowerCase() === gap.skill.toLowerCase()
+                          return (
+                            <button
+                              key={gap.skill}
+                              type="button"
+                              onClick={() => {
+                                setSelectedResourceSkill(gap.skill)
+                                setSearchSkillInput('')
+                              }}
+                              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                                isSelected
+                                  ? 'bg-primary text-white shadow-sm ring-2 ring-primary/40'
+                                  : 'bg-surface hover:bg-surface-hover text-text-muted hover:text-text border border-border/70'
+                              }`}
+                            >
+                              <span>{gap.skill}</span>
+                              <span className="text-[10px] text-rose-300">+{gap.gap_magnitude}</span>
+                            </button>
+                          )
+                        })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </Card>
+
+            {/* Main Resource Display Area */}
+            {!selectedResourceSkill ? (
+              /* State: No Skill Selected */
+              <Card className="text-center py-12 bg-surface-card/60">
+                <div className="max-w-md mx-auto space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-2 text-xl">
+                    📚
+                  </div>
+                  <h3 className="text-base font-semibold text-text">
+                    Select a Skill to View Resources
+                  </h3>
+                  <p className="text-xs sm:text-sm text-text-muted">
+                    Click "View Resources" on any recommended skill card above, or use the search bar to find curated learning materials.
+                  </p>
+                </div>
+              </Card>
+            ) : isResourcesLoading ? (
+              /* Loading Skeletons */
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <Skeleton height="24px" className="w-48" />
+                  <Skeleton height="24px" className="w-24" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-pulse">
+                  <Skeleton height="200px" className="rounded-2xl" />
+                  <Skeleton height="200px" className="rounded-2xl" />
+                  <Skeleton height="200px" className="rounded-2xl" />
+                </div>
+              </div>
+            ) : isResourcesError ? (
+              /* Error State */
+              <Card className="text-center py-10 bg-danger/10 border-danger/30">
+                <div className="max-w-md mx-auto space-y-3 text-danger">
+                  <h3 className="text-base font-semibold">Failed to Load Resources</h3>
+                  <p className="text-xs sm:text-sm text-danger/80">
+                    {resourcesError?.response?.data?.detail || 'An unexpected error occurred while querying resources.'}
+                  </p>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    onClick={() => refetchResources()}
+                    className="mt-2"
+                  >
+                    Try Again
+                  </Button>
+                </div>
+              </Card>
+            ) : !resourcesData?.resources || resourcesData.resources.length === 0 ? (
+              /* Empty State: No matches for search */
+              <Card className="text-center py-12 bg-surface-card/60">
+                <div className="max-w-md mx-auto space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-warning/10 text-warning flex items-center justify-center mx-auto mb-2 text-xl">
+                    🔍
+                  </div>
+                  <h3 className="text-base font-semibold text-text">
+                    No Direct Resources Found for "{selectedResourceSkill}"
+                  </h3>
+                  <p className="text-xs sm:text-sm text-text-muted leading-relaxed">
+                    Our TF-IDF matching engine could not find high-confidence learning materials for this search term. Try searching for broader technical skills such as Python, React, Docker, or AWS.
+                  </p>
+                  {recommendations.length > 0 && (
+                    <div className="pt-2">
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        onClick={() => setSelectedResourceSkill(recommendations[0].skill)}
+                      >
+                        View Top Target: {recommendations[0].skill}
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              </Card>
+            ) : (
+              /* Success State: Curated Resources Grid */
+              <div className="space-y-4">
+                {/* Section Header with Meta & Navigation */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface-card/50 p-4 rounded-xl border border-border/70">
+                  <div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-base font-bold text-text">
+                        Learning Path for{' '}
+                        <span className="text-primary">{resourcesData.skill}</span>
+                      </h3>
+                      <Badge variant="success" size="sm">
+                        {resourcesData.resources.length} Verified Resources
+                      </Badge>
+                      {resourcesData.skill.toLowerCase() !== selectedResourceSkill.toLowerCase() && (
+                        <span className="text-xs text-indigo-300/80 italic">
+                          (TF-IDF fuzzy matched from "{selectedResourceSkill}")
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-text-muted mt-0.5">
+                      Hand-picked courses, documentation, and video deep-dives ranked by learning efficiency.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 self-start sm:self-auto">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      onClick={() => {
+                        setActiveTab('recommendations')
+                        const recsEl = document.getElementById('section-b-recommendations')
+                        if (recsEl) {
+                          recsEl.scrollIntoView({ behavior: 'smooth' })
+                        }
+                      }}
+                      className="text-xs whitespace-nowrap"
+                    >
+                      ← Back to Recommendations
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Resource Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {resourcesData.resources.map((resource, idx) => (
+                    <ResourceCard
+                      key={`${resource.title}-${idx}`}
+                      resource={resource}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
