@@ -87,7 +87,7 @@ npm run build
 - **Separation of Concerns**: Never make frontend directly query the database or call internal backend functions. All data exchange occurs via `/api/v1` REST endpoints.
 - **Async by Default**: All backend database queries and route handlers must use `async`/`await` with SQLAlchemy `AsyncSession`.
 - **Validation**: Strict schema validation using Pydantic v2 on backend and Zod on frontend.
-- **Documentation Integrity**: Maintain clean git commits aligning with phase descriptions in `PRIORITY.md`.
+- **No Git Commits Without Permission**: **NEVER run `git commit` or create commits without the user's explicit instruction and permission.** Do not automatically commit when completing phases or steps.
 
 ---
 
