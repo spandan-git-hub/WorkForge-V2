@@ -6,12 +6,13 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field
 class RegisterRequest(BaseModel):
     name: str = Field(..., min_length=1, max_length=255, description="User full name")
     email: EmailStr = Field(..., description="User email address")
-    password: str = Field(..., min_length=8, description="Password (at least 8 characters)")
+    password: str = Field(..., min_length=8, max_length=128, description="Password (at least 8 characters, max 128)")
 
 
 class LoginRequest(BaseModel):
     email: EmailStr = Field(..., description="User email address")
-    password: str = Field(..., min_length=1, description="User password")
+    password: str = Field(..., min_length=1, max_length=128, description="User password")
+
 
 
 class UserOut(BaseModel):

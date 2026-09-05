@@ -10,9 +10,13 @@ import EventFilter from '../../components/events/EventFilter'
 import EventCard from '../../components/events/EventCard'
 import Skeleton from '../../components/ui/Skeleton'
 import Button from '../../components/ui/Button'
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 
 export default function EventsPage() {
+  useDocumentTitle('Events')
+
   const queryClient = useQueryClient()
+
   const { showToast } = useToast()
 
   const [page, setPage] = useState(1)

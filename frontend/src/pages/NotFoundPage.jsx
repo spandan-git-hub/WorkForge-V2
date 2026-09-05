@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/ui/Button'
 import { Home } from 'lucide-react'
+import useDocumentTitle from '../hooks/useDocumentTitle'
 
 export default function NotFoundPage() {
+  useDocumentTitle('Page Not Found')
+
   return (
+
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-surface text-center">
       <div className="w-16 h-16 rounded-2xl bg-surface-card border border-border flex items-center justify-center mb-6 text-2xl font-bold text-primary">
         404

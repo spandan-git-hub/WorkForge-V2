@@ -6,7 +6,7 @@ import * as z from 'zod'
 import { User, Mail, Lock, Eye, EyeOff, Sparkles, UserPlus } from 'lucide-react'
 
 import { useAuth } from '../../hooks/useAuth'
-
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 import { useToast } from '../../hooks/useToast'
 import authApi from '../../api/authApi'
 import Button from '../../components/ui/Button'
@@ -35,12 +35,14 @@ const registerSchema = z
   })
 
 export default function RegisterPage() {
+  useDocumentTitle('Register')
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { login } = useAuth()
   const toast = useToast()
   const navigate = useNavigate()
+
 
   const {
     register,

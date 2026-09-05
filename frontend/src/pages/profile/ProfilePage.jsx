@@ -26,6 +26,7 @@ import Badge from '../../components/ui/Badge'
 import Skeleton from '../../components/ui/Skeleton'
 import { useAuth } from '../../hooks/useAuth'
 import { useToast } from '../../hooks/useToast'
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 import profileApi from '../../api/profileApi'
 import { queryKeys } from '../../store/queryKeys'
 import { formatDate } from '../../utils/formatDate'
@@ -38,7 +39,13 @@ const POPULAR_ROLES = [
   'ML Engineer',
   'DevOps Engineer',
   'Cloud Architect',
+  'Mobile Developer',
+  'QA Engineer',
+  'Data Analyst',
   'Data Engineer',
+  'Cybersecurity Engineer',
+  'Site Reliability Engineer',
+  'Product Manager (tech)',
 ]
 
 const profileSchema = z.object({
@@ -46,28 +53,19 @@ const profileSchema = z.object({
     .string()
     .min(1, 'Full name is required')
     .max(255, 'Name cannot exceed 255 characters'),
-  target_role: z
-    .string()
-    .max(255, 'Target role cannot exceed 255 characters')
-    .optional()
-    .or(z.literal('')),
+  target_role: z.string().max(255, 'Role name cannot exceed 255 characters').optional(),
   avatar_url: z
     .string()
-    .max(512, 'Avatar URL cannot exceed 512 characters')
-    .refine(
-      (val) => !val || val.trim() === '' || /^https?:\/\/.+/.test(val.trim()),
-      'Please provide a valid URL starting with http:// or https://',
-    )
-    .optional()
-    .or(z.literal('')),
-  bio: z
-    .string()
-    .max(1000, 'Bio cannot exceed 1000 characters')
-    .optional()
-    .or(z.literal('')),
+    .url('Must be a valid URL (e.g. https://...)')
+    .max(512, 'URL cannot exceed 512 characters')
+    .or(z.literal(''))
+    .optional(),
+  bio: z.string().max(1000, 'Bio cannot exceed 1000 characters').optional(),
 })
 
 export default function ProfilePage() {
+  useDocumentTitle('Profile')
+
   const { updateUser } = useAuth()
   const toast = useToast()
   const queryClient = useQueryClient()

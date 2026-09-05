@@ -6,7 +6,7 @@ import * as z from 'zod'
 import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight } from 'lucide-react'
 
 import { useAuth } from '../../hooks/useAuth'
-
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 import { useToast } from '../../hooks/useToast'
 import authApi from '../../api/authApi'
 import Button from '../../components/ui/Button'
@@ -18,11 +18,13 @@ const loginSchema = z.object({
 })
 
 export default function LoginPage() {
+  useDocumentTitle('Login')
   const [showPassword, setShowPassword] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { login } = useAuth()
   const toast = useToast()
   const navigate = useNavigate()
+
 
   const {
     register,

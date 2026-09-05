@@ -25,6 +25,8 @@ import Button from '../../components/ui/Button'
 import Skeleton from '../../components/ui/Skeleton'
 import EventStatusBadge from '../../components/events/EventStatusBadge'
 import { profileApi } from '../../api/profileApi'
+import useDocumentTitle from '../../hooks/useDocumentTitle'
+
 
 const PROFICIENCY_CONFIG = [
   { level: '1', name: 'Beginner', color: '#64748b' },
@@ -77,10 +79,14 @@ function DashboardSkeleton() {
 }
 
 export default function DashboardPage() {
+
+  useDocumentTitle('Dashboard')
+
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ['dashboard'],
     queryFn: profileApi.getDashboard,
   })
+
 
   if (isLoading) {
     return <DashboardSkeleton />

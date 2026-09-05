@@ -12,10 +12,14 @@ import { getAvailableRoles, runGapAnalysis, getRecommendations, getResources } f
 import { queryKeys } from '../../store/queryKeys'
 import { useAuth } from '../../hooks/useAuth'
 import { useToast } from '../../hooks/useToast'
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 import { formatSkillLevel } from '../../utils/formatSkillLevel'
 
 export default function AIInsightsPage() {
+  useDocumentTitle('AI Insights')
+
   const { user } = useAuth()
+
   const toast = useToast()
   const queryClient = useQueryClient()
 

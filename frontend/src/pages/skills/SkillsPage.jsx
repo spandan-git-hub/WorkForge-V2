@@ -12,9 +12,13 @@ import Button from '../../components/ui/Button'
 import Skeleton from '../../components/ui/Skeleton'
 import AddSkillForm from '../../components/skills/AddSkillForm'
 import SkillInventoryList from '../../components/skills/SkillInventoryList'
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 
 export default function SkillsPage() {
+  useDocumentTitle('Skill Inventory')
+
   const queryClient = useQueryClient()
+
   const { showToast } = useToast()
 
   const [skillToDelete, setSkillToDelete] = useState(null)

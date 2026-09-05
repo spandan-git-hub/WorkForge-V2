@@ -23,6 +23,8 @@ import Button from '../../components/ui/Button'
 import Badge from '../../components/ui/Badge'
 import Skeleton from '../../components/ui/Skeleton'
 import EventStatusBadge from '../../components/events/EventStatusBadge'
+import useDocumentTitle from '../../hooks/useDocumentTitle'
+
 
 export default function EventDetailPage() {
   const { id } = useParams()
@@ -41,6 +43,9 @@ export default function EventDetailPage() {
     queryFn: () => getEventById(id),
     enabled: Boolean(id),
   })
+
+  useDocumentTitle(event?.name ? event.name : 'Event Details')
+
 
   // Set interest mutation
   const setInterestMutation = useMutation({

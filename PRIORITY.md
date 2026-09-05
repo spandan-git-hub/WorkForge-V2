@@ -21,7 +21,7 @@ This is the master implementation guide. Follow each phase in order. Each phase 
 | Phase 8 | ML — Skill Recommender | ✅ Completed |
 | Phase 9 | ML — Resource Suggester | ✅ Completed |
 | Phase 10 | Dashboard (summary view) | ✅ Completed |
-| Phase 11 | Polish, error handling, loading states | |
+| Phase 11 | Polish, error handling, loading states | ✅ Completed |
 | Phase 12 | Deployment — Render + Vercel | |
 
 ---
@@ -1422,17 +1422,18 @@ Commit: `git commit -m "chore: production deployment config"`.
 - [x] AIInsightsPage Section C built
 
 ### Phase 10 — Dashboard
-- [ ] Dashboard data endpoint works (aggregated)
-- [ ] DashboardPage fully built with all sections
+- [x] Dashboard data endpoint works (aggregated)
+- [x] DashboardPage fully built with all sections
 
 ### Phase 11 — Polish
-- [ ] Error boundaries and global error handling
-- [ ] All mutations have `onError` toast handlers
-- [ ] All pages have loading skeletons
-- [ ] All lists have empty states
-- [ ] Responsive layout works on mobile/tablet/desktop
-- [ ] 404 page built
-- [ ] Full manual QA pass completed
+- [x] Error boundaries and global error handling
+- [x] All mutations have `onError` toast handlers
+- [x] All pages have loading skeletons
+- [x] All lists have empty states
+- [x] Responsive layout works on mobile/tablet/desktop
+- [x] 404 page built
+- [x] Full manual QA pass completed
+
 
 ### Phase 12 — Deployment
 - [ ] Backend deployed on Render, health check passing
